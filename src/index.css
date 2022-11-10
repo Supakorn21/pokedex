@@ -1,10 +1,36 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'barcadebrawl';
+  src: url(./assets/fonts/BarcadeBrawl.ttf);
+}
+
+body {
+  font-family: 'barcadebrawl' !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  font-size: 1.6rem !important;
+  background-image: url(./assets/images/bg.png) !important;
+  background-repeat: repeat !important;
 }
 
 code {
