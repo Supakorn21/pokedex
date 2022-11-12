@@ -8,11 +8,13 @@ const StyledDiv = styled.div`
   align-items: center;
 
   .dropdown-wrapper {
+    margin-top: 1rem;
     min-width: 20rem;
-    padding: 1rem;
 
     .ant-btn {
       font-size: 1rem;
+      height: 3rem;
+      min-width: 20rem;
     }
   }
 `;
