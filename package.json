@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "antd": "^4.24.0",
+    "antd": "^4.23.6",
     "craco": "^0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.0.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
