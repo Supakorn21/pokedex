@@ -1,5 +1,5 @@
 import { Text, DropdownMenu } from '@atomic';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -19,12 +19,21 @@ const StyledDiv = styled.div`
   }
 `;
 
-const FilterDropdown = ({ label, items = [] }) => {
+const FilterDropdown = ({ label, items = [], onChange }) => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
   const onItemSelect = ({ item }) => {
     setSelectedItem(item);
+    onChange?.(item);
   };
+
+  useEffect(() => {
+    const defaultItem = items[0];
+    // console.log('effect run', defaultItem);
+    onItemSelect({ item: defaultItem });
+    if (!items) return;
+  }, [items]);
+
   return (
     <StyledDiv>
       <Text>{label}</Text>
