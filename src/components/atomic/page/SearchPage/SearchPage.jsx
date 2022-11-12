@@ -1,6 +1,7 @@
-import { Logo, FilterDropdown, Button, Search } from '@atomic';
+import { Logo, FilterDropdown, Button, Search, PokemonCard } from '@atomic';
 import pokemonLogo from '@/assets/images/pokedex.png';
 import styled from 'styled-components';
+import { pokemonInfo } from '@/utils';
 import { regions, types, sortby } from './helper';
 import { Row, Col } from 'antd';
 import { useState } from 'react';
@@ -39,6 +40,13 @@ const sortbyDeopdownItems = sortby.map((s) => ({
 const getFetchPokemonFilters = (filters) => {
   return filters;
 };
+
+const PokemonContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: space-around;
+`;
 
 const SearchPage = () => {
   const [filters, setFilters] = useState({});
@@ -85,6 +93,11 @@ const SearchPage = () => {
           />
         </Col>
       </StyledRow>
+      <PokemonContainer>
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((x) => (
+          <PokemonCard key={x} pokemon={pokemonInfo} />
+        ))}
+      </PokemonContainer>
     </Container>
   );
 };
