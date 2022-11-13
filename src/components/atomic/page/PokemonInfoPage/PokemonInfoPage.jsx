@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Row, Col } from 'antd';
 
-import { Card, PokemonInfo, PokemonData } from '@atomic';
+import { Card, PokemonInfo, PokemonData, IconToggle } from '@atomic';
 
 import { pokemonInfo, getCardColorsByPokemonTypes } from '@/utils';
 
@@ -15,9 +15,16 @@ const Wrapper = styled.div`
 
 const PokemonInfoPage = () => {
   let [searchParams] = useSearchParams();
+  let navigate = useNavigate();
 
   // const id = searchParams.get('id');
   const bgColors = getCardColorsByPokemonTypes(pokemonInfo?.types);
+
+  const goBack = () => {
+    navigate('/', { replace: true });
+  };
+
+  const infoBack = <IconToggle name={'back'} size={'3rem'} onClick={goBack} />;
 
   return (
     <Wrapper>
@@ -26,6 +33,7 @@ const PokemonInfoPage = () => {
         width={'80%'}
         borderRadius={'1rem'}
         maxWidth={'80rem'}
+        left={infoBack}
       >
         <Row>
           <Col xs={24} sm={12} md={8} xxl={8}>
