@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import { InfoCircleFilled, HeartFilled } from '@ant-design/icons';
+import {
+  InfoCircleFilled,
+  HeartFilled,
+  BackwardFilled
+} from '@ant-design/icons';
 
 const getIcon = (name) => {
   const Icons = {
     info: InfoCircleFilled,
-    heart: HeartFilled
+    heart: HeartFilled,
+    back: BackwardFilled
   };
 
   const icon = Icons[name] || <div />;
