@@ -91,9 +91,9 @@ const getPokemonList = (pokemon = [], filters = {}) => {
   });
 
   const sortedPokemonList = pokemonLists.sort(sortingBy(sortBy?.value));
-  console.log(sortedPokemonList);
+  // console.log({ sortedPokemonList });
 
-  const result = pokemonLists.map((pokemon) => ({
+  const result = sortedPokemonList.map((pokemon) => ({
     ...pokemon,
     image: pokemon?.sprites?.other?.dream_world?.front_default
   }));
@@ -149,7 +149,7 @@ const SearchPage = () => {
     }));
   };
 
-  console.log({ pokemonLists });
+  // console.log({ pokemonLists });
 
   useEffect(() => {
     queryString && fetchPokemonList();
